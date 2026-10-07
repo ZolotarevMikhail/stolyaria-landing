@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://zolotarevmikhail.github.io/stolyaria-landing/sitemap.xml

@@ -1,0 +1,82 @@
+/* Столярия — демо-лендинг. Палитра в DESIGN.md. Без внешних файлов. */
+:root{
+  --bg:#F7F2EA;--card:#EFE7DA;--text:#332A21;--head:#8C5A25;--acc:#C97E2E;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font:17px/1.55 -apple-system,"Helvetica Neue",Arial,sans-serif}
+.wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+a{color:var(--head)}
+
+/* навигация */
+.nav{display:flex;align-items:center;gap:22px;padding-top:18px;padding-bottom:18px}
+.brand{font-weight:800;letter-spacing:.08em;color:var(--head)}
+.nav nav{display:flex;gap:18px;margin-left:auto}
+.nav nav a{text-decoration:none;color:var(--text);font-size:15px}
+.btn{text-decoration:none;border-radius:10px;padding:11px 20px;font-weight:700;font-size:15px;display:inline-block}
+.nav .btn-cta{margin-left:auto}
+.btn-cta{background:var(--head);color:#fff}
+
+/* герой */
+.hero{display:grid;grid-template-columns:1fr 380px;gap:44px;align-items:center;padding-top:44px;padding-bottom:60px}
+.kicker{font-size:12px;letter-spacing:.14em;color:var(--acc);text-transform:uppercase;font-weight:700;margin-bottom:10px}
+h1{font-family:Georgia,serif;font-size:clamp(30px,4.6vw,46px);line-height:1.16;letter-spacing:-.01em}
+h1 em{font-style:normal;color:var(--acc)}
+.lead{margin:16px 0 20px;font-size:18px}
+.micro{font-size:13px;color:#6B5D4D;margin-top:10px}
+.hero-facts{margin:22px 0 0;padding:0;list-style:none;display:grid;gap:8px;font-size:15px}
+.hero-facts li::before{content:"— ";color:var(--acc);font-weight:700}
+.hero-img img{width:100%;height:auto;border-radius:14px;display:block}
+figcaption{font-size:13px;color:#6B5D4D;margin-top:8px}
+
+/* заголовки секций */
+section{padding:46px 0}
+h2{font-family:Georgia,serif;font-size:clamp(24px,3vw,30px);margin-bottom:22px}
+
+/* работы */
+.works{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.works img{width:100%;height:auto;border-radius:12px;display:block}
+.works figcaption{line-height:1.5}
+.works strong{display:block;margin-bottom:4px;color:var(--head)}
+
+/* шаги */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;list-style:none;padding:0;counter-reset:s}
+.steps li{background:var(--card);border-radius:12px;padding:16px 16px 18px;counter-increment:s}
+.steps li::before{content:"0"counter(s);font-family:Georgia,serif;font-size:26px;color:var(--acc);font-weight:700}
+.steps h3{font-size:16px;margin:6px 0 6px}
+.steps p{font-size:14px;color:#50453A}
+
+/* цены */
+.prices{list-style:none;padding:0;display:grid;gap:10px;font-size:17px}
+.prices li{border-left:3px solid var(--acc);padding:6px 0 6px 14px}
+
+/* FAQ */
+.faq details{background:var(--card);border-radius:12px;padding:14px 18px;margin-bottom:10px}
+.faq summary{font-weight:700;cursor:pointer;font-size:16px}
+.faq details p{margin-top:10px;font-size:15px;color:#50453A}
+
+/* форма */
+.form-box{background:var(--card);border-radius:16px;padding:30px}
+#lead{display:grid;gap:10px;max-width:430px;margin-top:16px}
+.inp{border:1px solid #D6C8B4;background:#fff;border-radius:10px;padding:12px 14px;font-size:16px;color:var(--text)}
+.lead-status{font-size:14px;font-weight:600;min-height:20px}
+
+/* футер */
+.inner-footer{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;padding:20px 20px;border-top:1px solid #D6C8B4;font-size:13px;color:#6B5D4D}
+
+/* CTA повторения */
+section .micro a{color:var(--head)}
+
+/* появление: без JS всё видно; порядок правил важен: pre раньше in */
+.fade.pre{opacity:0;transform:translateY(14px);transition:opacity .5s,transform .5s}
+.fade.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){.fade{transition:none}.fade.pre{opacity:1;transform:none}}
+
+/* адаптив */
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;gap:26px;padding-top:26px}
+  .works{grid-template-columns:1fr}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .nav nav{display:none}
+}
+@media (max-width:520px){.steps{grid-template-columns:1fr}.form-box{padding:20px}}
